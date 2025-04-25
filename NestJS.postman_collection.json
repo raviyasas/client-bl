@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "f0f20dc1-736b-4c06-9ea2-bd07951fe404",
+		"name": "NestJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "899651"
+	},
+	"item": [
+		{
+			"name": "Create client",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clientName\": \"IIIIok\",\n    \"clientCode\": \"new client code2jkj\",\n    \"clientDescription\": \"new client des2\",\n    \"clientIsActive\": true,\n    \"clientCreatedBy\":\"1f3da79f-d7e6-418f-8b4b-b1361bad295e\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/clients",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update client",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clientName\": \"IIIIok\",\n    \"clientCode\": \"new client code2jkj\",\n    \"clientDescription\": \"new client des2\",\n    \"clientIsActive\": true,\n    \"clientCreatedBy\":\"1f3da79f-d7e6-418f-8b4b-b1361bad295e\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/clients",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get clients",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/clients",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get client by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"ravi\",\n    \"qty\": 5,\n    \"price\": 3000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/clients/e522322d-5237-42b4-bc0d-95e73088c4bc",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"e522322d-5237-42b4-bc0d-95e73088c4bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete client",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/clients/0794c0a5-33fe-4327-a7df-ffbd11a27dfb",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"0794c0a5-33fe-4327-a7df-ffbd11a27dfb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
