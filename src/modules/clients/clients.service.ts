@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateClientDto } from './dto/create-client.dto';
 import { UpdateClientDto } from './dto/update-client.dto';
 import { GraphqlService } from 'src/common/graphql/graphql/graphql.service';
@@ -13,12 +13,13 @@ export class ClientsService {
   // Create a new client
   async create(createClientDto: CreateClientDto) {
     try {
+      
       const variables = {
         client: {
           clientName: createClientDto.clientName,
           clientCode: createClientDto.clientCode,
-          clientDescription: createClientDto.clientDescription,
-          clientIsActive: createClientDto.clientIsActive,
+          clientDescription: createClientDto.clientDescription ?? '',
+          clientIsActive: createClientDto.clientIsActive ?? true,
           clientCreatedBy: createClientDto.clientCreatedBy
         }
       }
@@ -37,7 +38,6 @@ export class ClientsService {
     } catch (error) {
       console.error('Create Client Error:', error.stack || error.message);
       throw new InternalServerErrorException('Unable to create client. Please try again later.');
-
     }
   }
 

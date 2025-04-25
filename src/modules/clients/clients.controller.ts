@@ -9,7 +9,7 @@ export class ClientsController {
   constructor(private readonly clientsService: ClientsService) {}
 
   @Post()
-  create(@Body() createClientDto: CreateClientDto): Promise<ResponseDto>  {
+  async create(@Body() createClientDto: CreateClientDto): Promise<ResponseDto>  {
     return this.clientsService.create(createClientDto);
   }
 
@@ -19,7 +19,7 @@ export class ClientsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) : Promise<ResponseDto>  {
+  async findOne(@Param('id') id: string) : Promise<ResponseDto>  {
     if (!id.trim()) {
       throw new BadRequestException('Client ID cannot be empty');
     }
@@ -27,7 +27,7 @@ export class ClientsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateClientDto: UpdateClientDto) : Promise<ResponseDto> {
+  async update(@Param('id') id: string, @Body() updateClientDto: UpdateClientDto) : Promise<ResponseDto> {
     if (!id.trim()) {
       throw new BadRequestException('Client ID cannot be empty');
     }
@@ -35,7 +35,7 @@ export class ClientsController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  async remove(@Param('id') id: string) {
     if (!id.trim()) {
       throw new BadRequestException('Client ID cannot be empty');
     }
